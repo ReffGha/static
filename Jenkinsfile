@@ -4,7 +4,8 @@ pipeline {
       stage('Lint HTML') {
         steps {
           sh 'tidy -q -e *.html'
-        }
+         }
+       }
       stage(‘AWSUploadS3’) {
         steps {
           withAWS(region:'us-west-2',credentials:'JenkinsAWS') {
